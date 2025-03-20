@@ -62,7 +62,7 @@ function Contact() {
             Email
             <input
               type="text"
-              name="name"
+              name="email"
               value={form.email}
               className="input"
               placeholder="email"
@@ -74,9 +74,9 @@ function Contact() {
           </label>
           <label className="text-black-500 font-semibold">
             Your Message
-            <input
-              type="text"
-              name="name"
+            <textarea
+             rows={4}
+              name="message"
               value={form.message}
               className="textarea"
               placeholder="let me know how i can help you"

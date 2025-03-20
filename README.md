@@ -1,12 +1,28 @@
-# React + Vite
+3D Portfolio with React and Three.js
+🚀 A stunning and interactive 3D portfolio built using React and Three.js to showcase projects and skills in a visually engaging way.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🖥️ Features
+🌟 3D Animations – Interactive 3D elements powered by Three.js
+🎨 Smooth UI/UX – Aesthetic and user-friendly interface
+📱 Responsive Design – Works on desktop, tablet, and mobile
+⚡ Performance Optimized – Efficient rendering for a smooth experience
+🌐 Dynamic Content – Easily customizable to add projects and details
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tech Stack
+React – Component-based UI
+Three.js – 3D graphics and animations
+React Three Fiber – Declarative Three.js integration with React
+GSAP (Optional) – Smooth animations and transitions
+📦 Installation & Setup
+Clone the repository and install dependencies:
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+git clone https://github.com/SandeepCodeWala/Portfolio_3JS.git
+cd Portfolio_3JS
+npm install
+Start the development server:
+npm run dev
+
+For production build:
+npm run build
