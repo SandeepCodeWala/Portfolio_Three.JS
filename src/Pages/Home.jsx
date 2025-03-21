@@ -7,8 +7,8 @@ import Plane from "../components/Plane";
 import Bird from "../components/Bird";
 import HomeInfo from "../components/HomeInfo";
 import sakura from "../assets/sakura.mp3";
-import  soundoff  from "../assets/icons/soundoff.png";
-import  soundon  from "../assets/icons/soundon.png";
+import soundoff from "../assets/icons/soundoff.png";
+import soundon from "../assets/icons/soundon.png";
 
 function Home() {
   const audioRef = useRef(new Audio(sakura));
