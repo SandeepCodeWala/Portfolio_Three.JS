@@ -9,7 +9,7 @@ Title: Fox
 import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-import scene from "../assets/fox.glb";
+import scene from "../assets/fox1.glb";
 
 export function Fox({ currentAnimation, ...props }) {
   const group = useRef();
@@ -17,50 +17,53 @@ export function Fox({ currentAnimation, ...props }) {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
- Object.values(actions).forEach((action)=>action.stop())
- if(actions[currentAnimation])
- {
-    actions[currentAnimation].play()
- }
-  }, [actions,currentAnimation])
+    console.log("Available Animations:", Object.keys(actions)); // List animation names
   
+    Object.values(actions).forEach((action) => action.stop());
+    if (actions[currentAnimation]) {
+      console.log(`Playing animation: ${currentAnimation}`);
+      actions[currentAnimation].reset().fadeIn(0.5).play();
+    }
+  }, [actions, currentAnimation]);
+  
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <primitive object={nodes.GLTF_created_0_rootJoint} />
-        <skinnedMesh
-          name="Object_7"
-          geometry={nodes.Object_7.geometry}
-          material={materials.PaletteMaterial001}
-          skeleton={nodes.Object_7.skeleton}
-        />
-        <skinnedMesh
-          name="Object_8"
-          geometry={nodes.Object_8.geometry}
-          material={materials.PaletteMaterial001}
-          skeleton={nodes.Object_8.skeleton}
-        />
-        <skinnedMesh
-          name="Object_9"
-          geometry={nodes.Object_9.geometry}
-          material={materials.PaletteMaterial001}
-          skeleton={nodes.Object_9.skeleton}
-        />
-        <skinnedMesh
-          name="Object_10"
-          geometry={nodes.Object_10.geometry}
-          material={materials.PaletteMaterial001}
-          skeleton={nodes.Object_10.skeleton}
-        />
-        <skinnedMesh
-          name="Object_11"
-          geometry={nodes.Object_11.geometry}
-          material={materials.PaletteMaterial001}
-          skeleton={nodes.Object_11.skeleton}
-        />
+        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
+          <group
+            name="telekom_Cyber_Buddy_0811184917_fbx4@Talking556fbx"
+            rotation={[Math.PI / 1.9, 0, 0]}
+            scale={0.05}
+          >
+            <group name="Object_2">
+              <group name="RootNode">
+                <group name="Object_4">
+                  <primitive object={nodes._rootJoint} />
+                  <skinnedMesh
+                    name="Object_7"
+                    geometry={nodes.Object_7.geometry}
+                    material={materials.Material_0}
+                    skeleton={nodes.Object_7.skeleton}
+                  />
+                  <group
+                    name="Object_6"
+                    rotation={[-Math.PI / 2, 0, 0]}
+                    scale={100}
+                  />
+                  <group
+                    name="Mesh_0"
+                    rotation={[-Math.PI / 2, 0, 0]}
+                    scale={100}
+                  />
+                </group>
+              </group>
+            </group>
+          </group>
+        </group>
       </group>
     </group>
   );
 }
 
-useGLTF.preload("/fox.glb");
+useGLTF.preload("/fox1.glb");

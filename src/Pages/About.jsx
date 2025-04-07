@@ -21,22 +21,24 @@ function About() {
         </p>
       </div>
       <div className="py-10 flex flex-col">
-        <h3 className="subhead-text">My Skills</h3>
-        <div className="mt-16 flex flex-wrap gap-12">
-          {skills.map((skill) => (
-            <div className="block-container w-20 h-20">
-              <div className="btn-back rounded-xl" />
-              <div className="btn-front rounded-xl flex justify-center items-center">
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
-            </div>
-          ))}
+  <h3 className="subhead-text">My Skills</h3>
+  <div className="mt-16 flex flex-wrap gap-12">
+    {skills.map((skill) => (
+      <div key={skill.name} className="block-container w-20 h-28"> {/* increased height */}
+        <div className="btn-back rounded-xl" />
+        <div className="btn-front rounded-xl flex flex-col justify-center items-center">
+          <img
+            src={skill.imageUrl}
+            alt={skill.name}
+            className="w-1/2 h-1/2 object-contain"
+          />
+          <p className="text-center text-sm mt-2">{skill.name}</p>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
       <div className="py-16">
         <h3 className="subhead-text">My Experience</h3>
 
@@ -59,6 +61,7 @@ function About() {
                       alt={experience.company_name}
                       className="w-[60%] h-[60%] object-contain"
                     />
+                    
                   </div>
                 }
                 iconStyle={{

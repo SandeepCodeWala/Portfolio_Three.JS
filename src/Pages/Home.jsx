@@ -17,6 +17,8 @@ function Home() {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(null);
   const [isplaying, setIsPlaying] = useState(false);
+  const [modelRotation, setModelRotation] = useState([0.1, 4.7, 0]);
+  const lastYRef = useRef(null);
   useEffect(() => {
     if (isplaying) {
       audioRef.current.play();
@@ -36,6 +38,32 @@ function Home() {
       screenScale = [1, 1, 1];
     }
     return [screenScale, screenPosition, rotation];
+  };
+
+  const handleMouseDown = (e) => {
+    alert("mouse down");
+    setIsRotating(true);
+    lastYRef.current = e.clientY;
+  };
+
+  const handleMouseUp = () => {
+    setIsRotating(false);
+    lastYRef.current = null;
+  };
+
+  const handleMouseMove = (e) => {
+    if (isRotating && lastYRef.current !== null) {
+      const deltaY = e.clientY - lastYRef.current;
+      const rotationAmount = deltaY * 0.005; // Adjust sensitivity
+
+      setModelRotation((prevRotation) => [
+        prevRotation[0] + rotationAmount, // Rotate on X-axis (up/down)
+        prevRotation[1],
+        prevRotation[2],
+      ]);
+
+      lastYRef.current = e.clientY;
+    }
   };
 
   const adjustPlaneScreenSize = () => {
@@ -59,10 +87,13 @@ function Home() {
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
       <Canvas
-        className={`w-full h-screen bg-transparent ${
+        className={` h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
         }`}
         camera={{ near: 0.1, far: 1000 }}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
       >
         <Suspense fallback={<Loader />}></Suspense>
         <directionalLight position={[1, 1, 1]} intensity={2} />
@@ -80,16 +111,16 @@ function Home() {
           setIsRotating={setIsRotating}
           position={islandPosition}
           scale={islandScale}
-          rotation={rotation}
+          rotation={modelRotation} // updated rotation
           setCurrentStage={setCurrentStage} // Pass setCurrentStage
         />
 
-        <Plane
+        {/* <Plane
           isRotating={isRotating}
           rotation={[0, 20, 0]}
           planePosition={planePosition}
           planeScale={planeScale}
-        />
+        /> */}
       </Canvas>
       {/* {currentStage !== null && (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">

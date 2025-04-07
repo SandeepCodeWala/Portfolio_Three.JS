@@ -1,38 +1,35 @@
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import birdScene from "../assets/bird.glb";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { Clock } from "three";
+
 function Bird() {
   const birdRef = useRef();
   const { scene, animations } = useGLTF(birdScene);
   const { actions } = useAnimations(animations, birdRef);
+  const [direction, setDirection] = useState(1); // 1 for left to right, -1 for right to left
 
   useEffect(() => {
     actions["Take 001"].play();
   }, []);
 
-  useFrame(({ clock, camera }) => {
-    if (!birdRef.current) return; // Prevents crashes
-  
-    birdRef.current.rotation.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
-  
+  useFrame(({ camera }) => {
+    if (!birdRef.current) return;
+
+    // Set rotation based on direction
+    birdRef.current.rotation.y = direction === 1 ? 0 : Math.PI;
+
+    // Move the bird in the correct direction
+    birdRef.current.position.x += 0.005 * direction;
+    birdRef.current.position.z -= 0.005 * direction;
+
+    // Check if it needs to turn around
     if (birdRef.current.position.x > camera.position.x + 10) {
-      birdRef.current.rotation.y = Math.PI;
+      setDirection(-1);
     } else if (birdRef.current.position.x < camera.position.x - 10) {
-      birdRef.current.rotation.y = 0;
-    }
-  
-    if (birdRef.current.rotation.x === 0) {
-      birdRef.current.position.x += 0.005;
-      birdRef.current.position.z -= 0.005;
-    } else {
-      birdRef.current.position.x -= 0.005;
-      birdRef.current.position.z += 0.005;
+      setDirection(1);
     }
   });
-  
 
   return (
     <mesh ref={birdRef} position={[-4, 2, 1]}>
