@@ -18,8 +18,8 @@ GSAP (Optional) – Smooth animations and transitions
 Clone the repository and install dependencies:
 
 
-git clone https://github.com/SandeepCodeWala/Portfolio_3JS.git
-cd Portfolio_3JS
+git clone https://github.com/SandeepCodeWala/Portfolio_Three.JS.git
+cd Portfolio_Three.JS
 npm install
 Start the development server:
 npm run dev
@@ -28,9 +28,9 @@ For production build:
 npm run build
 
 🖼️ScreenShot:-
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_3JS/blob/main/src/assets/images/main.png)
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_3JS/blob/main/src/assets/images/main1.png)
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_3JS/blob/main/src/assets/images/project.png)
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/main.png)
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/main1.png)
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/project.png)
 
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_3JS/blob/main/src/assets/images/about.png)
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_3JS/blob/main/src/assets/images/contact.png)
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/about.png)
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/contact.png)
