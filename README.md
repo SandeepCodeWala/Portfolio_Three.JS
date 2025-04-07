@@ -28,9 +28,10 @@ For production build:
 npm run build
 
 🖼️ScreenShot:-
-![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/main.png?raw=true)
 ![Portfolio Preview](https://raw.githubusercontent.com/SandeepCodeWala/Portfolio_Three.JS/refs/heads/main/src/assets/images/main1.png)
-![Portfolio Preview](https://raw.githubusercontent.com/SandeepCodeWala/Portfolio_Three.JS/refs/heads/main/src/assets/images/project.png)
-
+![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/main.png?raw=true)
 ![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/about.png?raw=true)
+
+![Portfolio Preview](https://raw.githubusercontent.com/SandeepCodeWala/Portfolio_Three.JS/refs/heads/main/src/assets/images/project.png)
+![Portfolio Preview](https://raw.githubusercontent.com/SandeepCodeWala/Portfolio_Three.JS/refs/heads/main/src/assets/images/exp.png)
 ![Portfolio Preview](https://github.com/SandeepCodeWala/Portfolio_Three.JS/blob/main/src/assets/images/contact.png?raw=true)
