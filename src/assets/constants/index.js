@@ -211,6 +211,6 @@ export const projects = [
     name: "Three.JS Portfolio",
     description:
       "An interactive 3D portfolio using Three.js and React to showcase my skills and projects in a visually engaging way. The site features smooth animations, 3D models, and a responsive design for a modern user experience.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+    link: "https://github.com/SandeepCodeWala/Portfolio_Three.JS",
   },
 ];
