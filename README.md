@@ -31,7 +31,9 @@ Clone the repository and install dependencies:
 git clone https://github.com/SandeepCodeWala/Portfolio_Three.JS.git
 cd Portfolio_Three.JS
 npm install
-
+npm run dev
+npm run build
+```
 
 🖼️ScreenShot:-
 ![Portfolio Preview](https://raw.githubusercontent.com/SandeepCodeWala/Portfolio_Three.JS/refs/heads/main/src/assets/images/main1.png)
