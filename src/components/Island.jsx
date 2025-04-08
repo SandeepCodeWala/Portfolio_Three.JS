@@ -152,18 +152,38 @@ export function Model({
     }
   });
   
+  const lastStage = useRef(null);
+
   const handleWheel = (e) => {
     e.preventDefault();
+  
     zoomLevel.current = Math.min(
       Math.max(zoomLevel.current - e.deltaY * 0.001, 0.5),
       1
     );
+  
     group.current.scale.set(
       zoomLevel.current,
       zoomLevel.current,
       zoomLevel.current
     );
+  
+    const zoom = zoomLevel.current;
+  
+    let newStage;
+    if (zoom >= 0.95) newStage = 1;
+    else if (zoom >= 0.8) newStage = 2;
+    else if (zoom >= 0.65) newStage = 3;
+    else newStage = 4;
+   
+    if (newStage !== lastStage.current) {
+      setCurrentStage(newStage);
+      lastStage.current = newStage;
+    }
+   
   };
+
+  
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.addEventListener("pointerdown", handlePointerDown);

@@ -29,9 +29,9 @@ function Home() {
   }, [isplaying]);
 
   const adjustScreenSize = () => {
-    let screenPosition = [0, -6.5, -43];
+    let screenPosition = [10, -11.5, -48];
     let screenScale = null;
-    let rotation = [0.1, 4.7, 0];
+    let rotation = [0.1, 2.7, 0];
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
     } else {
@@ -41,7 +41,6 @@ function Home() {
   };
 
   const handleMouseDown = (e) => {
-    alert("mouse down");
     setIsRotating(true);
     lastYRef.current = e.clientY;
   };
